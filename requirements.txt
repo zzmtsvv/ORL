@@ -1,0 +1,8 @@
+gym==0.26.2
+imageio==2.27.0
+numpy==1.22.0
+termcolor==2.2.0
+torch==1.13.1
+torchvision==0.15.1
+tqdm==4.64.1
+wandb==0.14.2
