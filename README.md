@@ -27,7 +27,7 @@ https://user-images.githubusercontent.com/85760987/230911037-dc138bc0-7eda-42f8-
 
 https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-9409-800739337310.mp4
 
-All plots are in `graphs` folder.
+
 <img src="spot/graphs/eval_d4rl_score.jpeg" width="700" height="700" />
 <img src="spot/graphs/eval_returns_mean.jpeg" width="700" height="700" />
 
