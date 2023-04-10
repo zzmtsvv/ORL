@@ -19,7 +19,7 @@ https://user-images.githubusercontent.com/85760987/230909607-2296499e-e0bf-4f7d-
 
 ### Supported Policy Optimization for Offline Reinforcement Learning
 
-spot is also implemented to mitigate the problem of the distribution shift by adding a density-based constraint to the main objective. ...
+spot is also implemented to mitigate the problem of the distribution shift by adding a density-based constraint to the main objective. The offline behavior density is realised with Conditional VAE ([4], [5])
 
 
 
@@ -33,4 +33,6 @@ https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-
 ## References
 [1] - Yi Zhao et al. (2022). Adaptive Behavior Cloning Regularization for Stable Offline-to-Online Reinforcement Learning. Available at: https://arxiv.org/abs/2210.13846 <br />
 [2] - Jialong Wu et al. (2022). Supported Policy Optimization for Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2202.06239 <br />
-[3] - Justin Fu et al. (2021). D4RL: DATASETS FOR DEEP DATA-DRIVEN REINFORCEMENT LEARNING. Available at: https://arxiv.org/abs/2004.07219
+[3] - Justin Fu et al. (2021). D4RL: DATASETS FOR DEEP DATA-DRIVEN REINFORCEMENT LEARNING. Available at: https://arxiv.org/abs/2004.07219 <br />
+[4] - Kingma, Welling et al. (2014). Auto-Encoding Variational Bayes. Available at: https://arxiv.org/abs/1312.6114 <br />
+[5] - Sohn, Lee, Yan et al. (2015). Learning Structured Output Representation using Deep Conditional Generative Models. Available at: https://papers.nips.cc/paper_files/paper/2015/hash/8d55a249e6baa5c06772297520da2051-Abstract.html
