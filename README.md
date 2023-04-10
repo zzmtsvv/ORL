@@ -19,7 +19,7 @@ https://user-images.githubusercontent.com/85760987/230909607-2296499e-e0bf-4f7d-
 
 ### Supported Policy Optimization for Offline Reinforcement Learning
 
-описать метод и вставить видосики и какие-то графики
+spot is also implemented to mitigate the problem of the distribution shift by adding a density-based constraint to the main objective. ...
 
 
 
