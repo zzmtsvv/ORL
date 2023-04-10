@@ -27,8 +27,8 @@ https://user-images.githubusercontent.com/85760987/230911037-dc138bc0-7eda-42f8-
 https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-9409-800739337310.mp4
 
 
-<img src="spot/graphs/eval_d4rl_score.jpeg" width="2192" height="1250" />
-<img src="spot/graphs/eval_returns_mean.jpeg" width="2182" height="1000" />
+<img src="spot/graphs/eval_d4rl_score.jpeg" width="1250" height="2192" />
+<img src="spot/graphs/eval_returns_mean.jpeg" width="1000" height="2182" />
 
 ## Results
 compare 2 models
