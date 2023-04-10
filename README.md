@@ -27,7 +27,7 @@ https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-
 
 
 ## Results
-As can be seen from plots and concrete examples on videos, `spot` performs much better than `redq_bc`. ...
+As can be seen from plots and concrete examples on videos, `spot` performs much better than `redq_bc`. Intuitively, it can be connected with the fact both works brings additional regularization term during training, in fact, density-constraint support defined in spot can handle offline distribution support more succesfully than L2 term in redq_bc due to its bigger complexity. Furthermore, additional research on latent structure of VAE can potentially bring impact in offline2online field.
 
 
 ## References
