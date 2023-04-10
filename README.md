@@ -18,6 +18,11 @@ redq_bc is implemented to adaptively weigh the L2 loss associated with offline d
 
 https://user-images.githubusercontent.com/85760987/230909314-e7e9df97-26d6-48ef-81d9-fe2e3fcaba08.mp4
 
+https://user-images.githubusercontent.com/85760987/230909607-2296499e-e0bf-4f7d-b1ae-f1947bd06bc7.mp4
+
+https://user-images.githubusercontent.com/85760987/230909659-99c52fba-be68-461d-941b-c71b80db01ca.mp4
+
+
 
 
 ### Supported Policy Optimization for Offline Reinforcement Learning
