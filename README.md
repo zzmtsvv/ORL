@@ -18,8 +18,7 @@ https://user-images.githubusercontent.com/85760987/230909607-2296499e-e0bf-4f7d-
 
 
 ### Supported Policy Optimization for Offline Reinforcement Learning
-
-spot is also implemented to mitigate the problem of the distribution shift by adding a density-based constraint to the main objective. The offline behavior density is realised with Conditional VAE ([4], [5]) that reconstructs action joint with condition (state in this case). ...
+spot (plots can be seen in `graphs` folder.) is also implemented to mitigate the problem of the distribution shift by adding a density-based constraint to the main objective. The offline behavior density is realised with Conditional VAE ([4], [5]) that reconstructs action joint with condition (state in this case). ...
 
 
 
@@ -28,8 +27,8 @@ https://user-images.githubusercontent.com/85760987/230911037-dc138bc0-7eda-42f8-
 https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-9409-800739337310.mp4
 
 
-<img src="spot/graphs/eval_d4rl_score.jpeg" width="700" height="700" />
-<img src="spot/graphs/eval_returns_mean.jpeg" width="700" height="700" />
+<img src="spot/graphs/eval_d4rl_score.jpeg" width="2192" height="1250" />
+<img src="spot/graphs/eval_returns_mean.jpeg" width="2182" height="1000" />
 
 ## Results
 compare 2 models
