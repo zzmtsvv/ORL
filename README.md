@@ -1,4 +1,4 @@
-# Offline-to-Online Reinforcement Learning
+# Offline2Online Reinforcement Learning
 This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).
 
 ## General setup
