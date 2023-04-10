@@ -14,20 +14,15 @@ All available models can be tested in colab opening `inference.ipynb`. Examples 
 redq_bc is implemented to adaptively weigh the L2 loss associated with offline dataset distribution during online fine-tuning on order to stabilise the training. This loss is constructed into the architecture to prevent sudden distribution shift from offline to online data with such simple regularisation that requires minimum code changes (the method is located in the `adaptive_bc` folder, there is also `paper` folder with key moments from the following paper to realise the model). Logs are available at: https://wandb.ai/zzmtsvv/adaptive_bc
 
 
-
-
-https://user-images.githubusercontent.com/85760987/230909314-e7e9df97-26d6-48ef-81d9-fe2e3fcaba08.mp4
-
 https://user-images.githubusercontent.com/85760987/230909607-2296499e-e0bf-4f7d-b1ae-f1947bd06bc7.mp4
-
-https://user-images.githubusercontent.com/85760987/230909659-99c52fba-be68-461d-941b-c71b80db01ca.mp4
-
-
 
 
 ### Supported Policy Optimization for Offline Reinforcement Learning
 
 описать метод и вставить видосики и какие-то графики
+
+https://user-images.githubusercontent.com/85760987/230910528-0cfbc8b5-b476-4c12-9935-adee5f837b1b.mp4
+
 
 
 
