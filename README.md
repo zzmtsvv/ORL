@@ -7,6 +7,9 @@ I've chosen these datasets from gym as they are from MuJoCo, i.e. require learni
 Models (both redq_bc and spot) were trained on this offline dataset first using `Adam` optimizer with `lr = 3e-4`. The same with online training. Scripts can be found in appropriate folders (`adaptive_bc` and `spot`)
 
 ## Models
+
+All available models can be tested in colab opening `inference.ipynb`
+
 ### Adaptive Behavior Cloning Regularization for Stable Offline-to-Online Reinforcement Learning
 redq_bc is implemented to adaptively weigh the L2 loss associated with offline dataset distribution during online fine-tuning on order to stabilise the training. This loss is constructed into the architecture to prevent sudden distribution shift from offline to online data with such simple regularisation that requires minimum code changes (the method is located in the `adaptive_bc` folder, there is also `paper` folder with key moments from the following paper to realise the model). Logs are available at: https://wandb.ai/zzmtsvv/adaptive_bc
 
