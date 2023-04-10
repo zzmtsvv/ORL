@@ -21,8 +21,12 @@ https://user-images.githubusercontent.com/85760987/230909607-2296499e-e0bf-4f7d-
 
 описать метод и вставить видосики и какие-то графики
 
-https://user-images.githubusercontent.com/85760987/230910528-0cfbc8b5-b476-4c12-9935-adee5f837b1b.mp4
-https://user-images.githubusercontent.com/85760987/230910824-6a61add1-e2f0-496f-83f2-9695b3599275.mp4
+
+
+https://user-images.githubusercontent.com/85760987/230911037-dc138bc0-7eda-42f8-9881-92f425a2d131.mp4
+
+https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-9409-800739337310.mp4
+
 
 
 
