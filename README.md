@@ -39,4 +39,4 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [6] - Lillicrap, Hunt et al. (2015). Continuous Control With Deep Reinforcement Learning. Available at: https://arxiv.org/abs/1509.02971 <br />
 [7] - Mnih et al. (2013). Playing Atari with Deep Reinforcement Learning. Available at: https://arxiv.org/abs/1312.5602 <br />
 [8] - Fujimoto et al. (2018). Addressing Function Approximation Error in Actor-Critic Methods. Available at: https://arxiv.org/abs/1802.09477 <br />
-[9] - Nakamoto, Zhai et al. (2023). Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning
+[9] - Nakamoto, Zhai et al. (2023). Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning. Available at: https://arxiv.org/abs/2303.05479
