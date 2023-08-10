@@ -28,10 +28,10 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 
 # Offline Reinforcement Learning
 ## SAC-RND[10]
-Check out for (my implementation)[https://github.com/zzmtsvv/sac_rnd]. Logs are available via the (link)[https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv]
+Check out for [my implementation](https://github.com/zzmtsvv/sac_rnd). Logs are available via the [link](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv)
 
 ## Cal-QL
-Although it is offline2online method, only offline training is realised yet in `cal_ql` folder. Logs are available via the (link)[https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv]
+Although it is offline2online method, only offline training is realised yet in `cal_ql` folder. Logs are available via the [link](https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv)
 
 
 ## References
