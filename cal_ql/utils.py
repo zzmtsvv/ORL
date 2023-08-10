@@ -1,9 +1,9 @@
 import torch
+from torch import nn
 import numpy as np
 import os
 import gym
-from dataset import ReplayBuffer
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Union, Dict
 import json
 from imageio import mimsave
 import random
@@ -32,34 +32,62 @@ def seed_everything(seed: int,
     random.seed(seed)
 
 
-def evaluate_policy(policy,
-                    env_name,
-                    seed,
-                    eval_episodes=10):
-    eval_env = gym.make(env_name)
-    eval_env.seed(seed + 42)
+def is_goal_reached(reward: float,
+                    info: Dict) -> bool:
+    if "goal_achieved" in info:
+        return info["goal_achieved"]
+    return reward > 0
 
-    average_reward, average_length = 0, 0
 
-    for _ in range(eval_episodes):
-        state, done = eval_env.reset(), False
+@torch.no_grad()
+def eval_actor(env: gym.Env,
+               actor: nn.Module,
+               device: str,
+               num_episodes: int,
+               seed: int) -> Tuple[np.ndarray, np.ndarray]:
+    env.seed(seed)
+    actor.eval()
+    episode_rewards = []
+    successes = []
 
+    for _ in range(num_episodes):
+        state, done = env.reset(), False
+        episode_reward = 0.0
+        goal_achieved = False
         while not done:
-            action = policy.act(state)
-            state, reward, done, _ = eval_env.step(action)
-            average_reward += reward
-            average_length += 1
-        
-        average_reward /= eval_episodes
-        average_length = int(average_length / eval_episodes)
+            action = actor.act(state, device)
+            state, reward, done, env_infos = env.step(action)
+            episode_reward += reward
+            if not goal_achieved:
+                goal_achieved = is_goal_reached(reward, env_infos)
+                # Valid only for environments with goal
+        successes.append(float(goal_achieved))
+        episode_rewards.append(episode_reward)
 
-        d4rl_score = eval_env.get_normalized_score(average_reward) * 100
+    actor.train()
+    return np.asarray(episode_rewards), np.mean(successes)
 
-        return {
-            "d4rl": d4rl_score,
-            "evaluation": average_reward,
-            "length": average_length
-        }
+
+def wrap_env(
+    env: gym.Env,
+    state_mean: Union[np.ndarray, float] = 0.0,
+    state_std: Union[np.ndarray, float] = 1.0,
+    reward_scale: float = 1.0,
+) -> gym.Env:
+    # PEP 8: E731 do not assign a lambda expression, use a def
+    def normalize_state(state):
+        return (
+            state - state_mean
+        ) / state_std  # epsilon should be already added in std.
+
+    def scale_reward(reward):
+        # Please be careful, here reward is multiplied by scale!
+        return reward_scale * reward
+
+    env = gym.wrappers.TransformObservation(env, normalize_state)
+    if reward_scale != 1.0:
+        env = gym.wrappers.TransformReward(env, scale_reward)
+    return env
 
 
 def rollout(batch_size,
@@ -102,7 +130,7 @@ class VideoRecorder:
         self.frames = []
         self.enabled = self.dir_name is not None and enabled
 
-    def record(self, env:gym.Env):
+    def record(self, env: gym.Env):
         if self.enabled:
             frame = env.render(
                 mode='rgb_array',

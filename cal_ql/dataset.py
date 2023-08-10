@@ -1,19 +1,19 @@
 import torch
 import numpy as np
-from typing import List, Tuple
+import gym
+from config import calql_config
+from typing import List, Tuple, Dict
 import os
 
 
 class ReplayBuffer:
-    data_size_threshold = 50000
-
     def __init__(self,
                  state_dim: int,
                  action_dim: int,
                  buffer_size: int = 1000000) -> None:
+        
         self.state_dim = state_dim
         self.action_dim = action_dim
-
         self.buffer_size = buffer_size
         self.pointer = 0
         self.size = 0
@@ -26,18 +26,16 @@ class ReplayBuffer:
         self.rewards = torch.zeros((buffer_size, 1), dtype=torch.float32, device=device)
         self.next_states = torch.zeros((buffer_size, state_dim), dtype=torch.float32, device=device)
         self.dones = torch.zeros((buffer_size, 1), dtype=torch.float32, device=device)
+        self.mc_returns = torch.zeros((buffer_size, 1), dtype=torch.float32, device=device)
 
         # i/o order: state, action, reward, next_state, done
     
-    @staticmethod
-    def to_tensor(data: np.ndarray, device=None) -> torch.Tensor:
-        if device is None:
-            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-        return torch.tensor(data, dtype=torch.float32, device=device)
-    
-    def from_json(self, json_file):
+    def from_json(self, json_file: str):
         import json
+
+        if not json_file.endswith('.json'):
+            json_file = json_file + '.json'
+
         json_file = os.path.join("json_datasets", json_file)
         output = dict()
 
@@ -53,18 +51,33 @@ class ReplayBuffer:
         
         self.from_d4rl(output)
     
-    def sample(self, batch_size: int):
+    def get_moments(self) -> Tuple[Tuple[torch.Tensor, torch.Tensor], Tuple[torch.Tensor, torch.Tensor]]:
+        state_mean, state_std = self.states.mean(dim=0), self.states.std(dim=0)
+        action_mean, action_std = self.actions.mean(dim=0), self.actions.std(dim=0)
+
+        return (state_mean, state_std), (action_mean, action_std)
+    
+    @staticmethod
+    def to_tensor(data: np.ndarray, device=None) -> torch.Tensor:
+        if device is None:
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        return torch.tensor(data, dtype=torch.float32, device=device)
+    
+    def sample(self, batch_size: int) -> Tuple[torch.Tensor]:
         indexes = np.random.randint(0, self.size, size=batch_size)
 
         return (
-            self.to_tensor(self.states[indexes], self.device),
-            self.to_tensor(self.actions[indexes], self.device),
-            self.to_tensor(self.rewards[indexes], self.device),
-            self.to_tensor(self.next_states[indexes], self.device),
-            self.to_tensor(self.dones[indexes], self.device)
+            self.states[indexes],
+            self.actions[indexes],
+            self.rewards[indexes],
+            self.next_states[indexes],
+            self.dones[indexes],
+            self.mc_returns[indexes]
         )
     
-    def from_d4rl(self, dataset):
+    def from_d4rl(self,
+                  dataset: Dict[str, np.ndarray]):
         if self.size:
             print("Warning: loading data into non-empty buffer")
         n_transitions = dataset["observations"].shape[0]
@@ -75,6 +88,7 @@ class ReplayBuffer:
             self.next_states[:n_transitions] = self.to_tensor(dataset["next_observations"][-n_transitions:], self.device)
             self.rewards[:n_transitions] = self.to_tensor(dataset["rewards"][-n_transitions:].reshape(-1, 1), self.device)
             self.dones[:n_transitions] = self.to_tensor(dataset["terminals"][-n_transitions:].reshape(-1, 1), self.device)
+            self.mc_returns[:n_transitions] = self.to_tensor(dataset["mc_returns"][-n_transitions:].reshape(-1, 1), self.device)
 
         else:
             self.buffer_size = n_transitions
@@ -84,45 +98,93 @@ class ReplayBuffer:
             self.next_states = self.to_tensor(dataset["next_observations"][-n_transitions:], self.device)
             self.rewards = self.to_tensor(dataset["rewards"][-n_transitions:].reshape(-1, 1), self.device)
             self.dones = self.to_tensor(dataset["terminals"][-n_transitions:].reshape(-1, 1), self.device)
+            self.mc_returns = self.to_tensor(dataset["mc_returns"][-n_transitions:].reshape(-1, 1), self.device)
         
         self.size = n_transitions
         self.pointer = n_transitions % self.buffer_size
     
-    def normalize_states(self, eps=1e-3):
+    @staticmethod
+    def obserations_bifurcation(observations: np.ndarray,
+                                next_observations: np.ndarray,
+                                eps: float = 1e-6) -> bool:
+        meow = np.linalg.norm(observations - next_observations)
+        return meow > eps
+    
+    def return2go(self,
+                  dataset: Dict[str, np.ndarray],
+                  env: gym.Env,
+                  cfg: calql_config) -> np.ndarray:
+        returns = []
+        episode_return = 0.0
+        episode_length = 0
+        current_rewards = []
+        terminals = []
+
+        length = len(dataset["rewards"])
+        for t, (reward, done) in enumerate(zip(dataset["rewards"], dataset["terminals"])):
+            
+            episode_return += float(reward)
+            current_rewards.append(float(reward))
+            terminals.append(float(done))
+
+            episode_length += 1
+
+            is_last_step = (t == length - 1) or episode_length == env._max_episode_steps
+            is_last_step = is_last_step or self.obserations_bifurcation(dataset["observations"][t + 1],
+                                                                        dataset["next_observations"][t])
+
+            if done or is_last_step:
+                discounted_returns = [0] * episode_length
+                prev_return = 0
+
+                if cfg.is_sparse_reward and reward == env.ref_min_score * cfg.reward_scale + cfg.reward_bias:
+                    discounted_returns = [reward / (1 - cfg.discount_factor)] * episode_length
+                else:
+                    for i in reversed(range(episode_length)):
+                        discounted_returns[i] = current_rewards[i] + cfg.discount_factor * prev_return * (1 - terminals[i])
+                        prev_return = discounted_returns[i]
+                returns += discounted_returns
+                episode_return, episode_length = 0.0, 0
+                current_rewards = []
+                terminals = []
+        
+        return np.array(returns)
+    
+    def from_d4rl_finetune(self, dataset):
+        raise NotImplementedError()
+    
+    def normalize_states(self, eps=1e-3) -> Tuple[torch.Tensor, torch.Tensor]:
         mean = self.states.mean(0, keepdim=True)
         std = self.states.std(0, keepdim=True) + eps
         self.states = (self.states - mean) / std
         self.next_states = (self.next_states - mean) / std
         return mean, std
     
-    def get_all(self):
-        return (
-            self.states[:self.size].to(self.device),
-            self.actions[:self.size].to(self.device),
-            self.rewards[:self.size].to(self.device),
-            self.next_states[:self.size].to(self.device),
-            self.dones[:self.size].to(self.device)
-        )
+    def clip(self, eps=1e-5):
+        self.actions = torch.clip(self.actions, - 1 + eps, 1 - eps)
 
     def add_transition(self,
                        state: torch.Tensor,
                        action: torch.Tensor,
                        reward: torch.Tensor,
                        next_state: torch.Tensor,
-                       done: torch.Tensor):
+                       done: torch.Tensor,
+                       mc_return: torch.Tensor):
         if not isinstance(state, torch.Tensor):
-            state = self.to_tensor(state)
-            action = self.to_tensor(action)
-            reward = self.to_tensor(reward)
-            next_state = self.to_tensor(next_state)
-            done = self.to_tensor(done)
+            state = self.to_tensor(state, self.device)
+            action = self.to_tensor(action, self.device)
+            reward = self.to_tensor(reward, self.device)
+            next_state = self.to_tensor(next_state, self.device)
+            done = self.to_tensor(done, self.device)
+            mc_return = self.to_tensor(mc_return, self.device)
 
-        
+
         self.states[self.pointer] = state
         self.actions[self.pointer] = action
         self.rewards[self.pointer] = reward
         self.next_states[self.pointer] = next_state
         self.dones[self.pointer] = done
+        self.mc_returns[self.pointer] = mc_return
 
         self.pointer = (self.pointer + 1) % self.buffer_size
         self.size = min(self.size + 1, self.buffer_size)
@@ -132,40 +194,11 @@ class ReplayBuffer:
                   actions: List[torch.Tensor],
                   rewards: List[torch.Tensor],
                   next_states: List[torch.Tensor],
-                  dones: List[torch.Tensor]):
-        for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
-            self.add_transition(state, action, reward, next_state, done)
-    
-    def distill(self,
-                dataset,
-                env_name,
-                sample_method,
-                ratio=0.05):
-        data_size = max(int(ratio * dataset["observations"].shape[0]), self.data_size_threshold)
-        assert sample_method in self.distill_methods, "Unknown sample method"
-
-        if sample_method == "random":
-            indexes = np.random.randint(0, dataset["observations"].shape[0], size=data_size)
-        if sample_method == "best":
-            full_datas_size = dataset["observations"].shape[0]
-            indexes = np.arange(full_datas_size - data_size)
+                  dones: List[torch.Tensor],
+                  mc_returns: List[torch.Tensor]):
         
-        if data_size < self.buffer_size:
-            self.states[:data_size] = self.to_tensor(dataset["observations"][indexes], self.device)
-            self.actions[:data_size] = self.to_tensor(dataset["actions"][indexes], self.device)
-            self.rewards[:data_size] = self.to_tensor(dataset["rewards"][indexes].reshape(-1, 1), self.device)
-            self.next_states[:data_size] = self.to_tensor(dataset["next_observations"][indexes], self.device)
-            self.dones[:data_size] = self.to_tensor(dataset["terminals"][indexes].reshape(-1, 1), self.device)
-        else:
-            self.buffer_size = data_size
-            self.states = self.to_tensor(dataset["observations"][indexes], self.device)
-            self.actions = self.to_tensor(dataset["actions"][indexes], self.device)
-            self.rewards = self.to_tensor(dataset["rewards"][indexes].reshape(-1, 1), self.device)
-            self.next_states = self.to_tensor(dataset["next_observations"][indexes], self.device)
-            self.dones = self.to_tensor(dataset["terminals"][indexes].reshape(-1, 1), self.device)
-        
-        self.size = data_size
-        self.pointer = data_size % self.buffer_size
+        for state, action, reward, next_state, done, mc_return in zip(states, actions, rewards, next_states, dones, mc_returns):
+            self.add_transition(state, action, reward, next_state, done, mc_return)
     
     @staticmethod
     def dataset_stats(dataset):
