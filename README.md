@@ -26,6 +26,13 @@ https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-
 ## Results
 As can be seen from plots and concrete examples on videos, `spot` performs much better than `redq_bc`. Intuitively, it can be connected with the fact both works brings additional regularization term during training, in fact, density-constraint support defined in spot can handle offline distribution support more succesfully than L2 term in redq_bc due to its bigger complexity. Furthermore, additional research on latent space of VAE can potentially bring impact in offline2online field.
 
+# Offline Reinforcement Learning
+## SAC-RND[10]
+Check out for (my implementation)[https://github.com/zzmtsvv/sac_rnd]. Logs are available via the (link)[https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv]
+
+## Cal-QL
+Although it is offline2online method, only offline training is realised yet in `cal_ql` folder. Logs are available via the (link)[https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv]
+
 
 ## References
 [1] - Yi Zhao et al. (2022). Adaptive Behavior Cloning Regularization for Stable Offline-to-Online Reinforcement Learning. Available at: https://arxiv.org/abs/2210.13846 <br />
@@ -36,4 +43,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [6] - Lillicrap, Hunt et al. (2015). Continuous Control With Deep Reinforcement Learning. Available at: https://arxiv.org/abs/1509.02971 <br />
 [7] - Mnih et al. (2013). Playing Atari with Deep Reinforcement Learning. Available at: https://arxiv.org/abs/1312.5602 <br />
 [8] - Fujimoto et al. (2018). Addressing Function Approximation Error in Actor-Critic Methods. Available at: https://arxiv.org/abs/1802.09477 <br />
-[9] - Nakamoto, Zhai et al. (2023). Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning. Available at: https://arxiv.org/abs/2303.05479
+[9] - Nakamoto, Zhai et al. (2023). Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning. Available at: https://arxiv.org/abs/2303.05479 <br />
+[10] - Nikulin, Kurenkov et al. (2023). Anti-Exploration by Random Network Distillation. Available at: https://arxiv.org/abs/2301.13616
