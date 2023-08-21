@@ -1,5 +1,5 @@
 # Offline2Online Reinforcement Learning
-This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />July 2023 update: There are also additional implementations of Cal-QL [9] in `cal_ql`, ReBRAC[11] in `rebrac` and EDAC[12] in `edac` folders respectively. At the moment offline training is realised for this models. There is also a mention of my implementation of SAC-RND[10].
+This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />July 2023 update: There are also additional implementations of Cal-QL [9] in `cal_ql`, ReBRAC[11] in `rebrac`, EDAC[12] in `edac` and AWAC[13] in `awac` folders respectively. At the moment offline training is realised for this models. There is also a mention of my implementation of SAC-RND[10].
 
 ## General setup
 I've chosen these datasets from gym as they are from MuJoCo, i.e. require learning of complex underlying structufe of the given task with trade-off in short-term and long-term strategies and Google Colab doesn't die from them ;). I have also used `d4rl` [3] library at https://github.com/tinkoff-ai/d4rl as a module to get offline dataset. Datasets used from `d4rl` for environments mentioned above: `medium` and `medium-replay`. Both models have the same base structure in architecture and training - actor-critic model [6] combined with Double Q-learning ([7], [8]).
@@ -39,6 +39,9 @@ Logs are available via the [link](https://wandb.ai/zzmtsvv/ReBRAC?workspace=user
 ## EDAC
 Logs are available via the [link](https://wandb.ai/zzmtsvv/EDAC?workspace=user-zzmtsvv)
 
+## AWAC
+Logs are available via the [link](https://wandb.ai/zzmtsvv/AWAC?workspace=user-zzmtsvv)
+
 
 ## References
 [1] - Yi Zhao et al. (2022). Adaptive Behavior Cloning Regularization for Stable Offline-to-Online Reinforcement Learning. Available at: https://arxiv.org/abs/2210.13846 <br />
@@ -52,4 +55,5 @@ Logs are available via the [link](https://wandb.ai/zzmtsvv/EDAC?workspace=user-z
 [9] - Nakamoto, Zhai et al. (2023). Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning. Available at: https://arxiv.org/abs/2303.05479 <br />
 [10] - Nikulin, Kurenkov et al. (2023). Anti-Exploration by Random Network Distillation. Available at: https://arxiv.org/abs/2301.13616 <br/>
 [11] - Tarasov, Kurenkov et al. (2023). Revisiting the Minimalist Approach to Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2305.09836 <br/>
-[12] - An, Moon et al. (2021). Uncertainty-Based Offline Reinforcement Learning with Diversified Q-Ensemble. Available at: https://arxiv.org/abs/2110.01548
+[12] - An, Moon et al. (2021). Uncertainty-Based Offline Reinforcement Learning with Diversified Q-Ensemble. Available at: https://arxiv.org/abs/2110.01548 <br/>
+[13] - Nair, Gupta et al. (2021). AWAC: Accelerating Online Reinforcement Learning with Offline Datasets. Available at: https://arxiv.org/abs/2006.09359
