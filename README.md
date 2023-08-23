@@ -37,7 +37,9 @@ Although it is offline2online method, only offline training is realised yet in `
 Logs are available via the [link](https://wandb.ai/zzmtsvv/ReBRAC?workspace=user-zzmtsvv)
 
 ## EDAC
-Logs are available via the [link](https://wandb.ai/zzmtsvv/EDAC?workspace=user-zzmtsvv)
+- SAC-N: with `eta = 0`. [Logs](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv)
+- LB-SAC: with `eta = 0` and `batch_size = 10_000`. [Logs](https://wandb.ai/zzmtsvv/LB-SAC?workspace=user-zzmtsvv)
+- EDAC: [Logs](https://wandb.ai/zzmtsvv/EDAC?workspace=user-zzmtsvv)
 
 ## AWAC
 Logs are available via the [link](https://wandb.ai/zzmtsvv/AWAC?workspace=user-zzmtsvv)
