@@ -37,9 +37,9 @@ Although it is offline2online method, only offline training is realised yet in `
 Logs are available via the [link](https://wandb.ai/zzmtsvv/ReBRAC?workspace=user-zzmtsvv)
 
 ## EDAC
-- SAC-N: with `eta = 0`. [Logs](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv)
-- LB-SAC: with `eta = 0` and `batch_size = 10_000`. [Logs](https://wandb.ai/zzmtsvv/LB-SAC?workspace=user-zzmtsvv)
-- EDAC: [Logs](https://wandb.ai/zzmtsvv/EDAC?workspace=user-zzmtsvv)
+- SAC-N[12]: with `eta = 0`. [Logs](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv)
+- LB-SAC[16]: with `eta = 0` and `batch_size = 10_000`. [Logs](https://wandb.ai/zzmtsvv/LB-SAC?workspace=user-zzmtsvv)
+- EDAC itself: [Logs](https://wandb.ai/zzmtsvv/EDAC?workspace=user-zzmtsvv)
 
 ## AWAC
 Logs are available via the [link](https://wandb.ai/zzmtsvv/AWAC?workspace=user-zzmtsvv)
@@ -66,4 +66,5 @@ Logs are available via the [link](https://wandb.ai/zzmtsvv/IQL?workspace=user-zz
 [12] - An, Moon et al. (2021). Uncertainty-Based Offline Reinforcement Learning with Diversified Q-Ensemble. Available at: https://arxiv.org/abs/2110.01548 <br/>
 [13] - Nair, Gupta et al. (2021). AWAC: Accelerating Online Reinforcement Learning with Offline Datasets. Available at: https://arxiv.org/abs/2006.09359 <br/>
 [14] - Chen, Lu et al. (2021). Decision Transformer: Reinforcement Learning via Sequence Modeling. Available at: https://arxiv.org/abs/2106.01345 <br/>
-[15] - Kostrikov, Nair et al. (2021). Offline Reinforcement Learning with Implicit Q-Learning. Available at: https://arxiv.org/abs/2110.06169
+[15] - Kostrikov, Nair et al. (2021). Offline Reinforcement Learning with Implicit Q-Learning. Available at: https://arxiv.org/abs/2110.06169 <br/>
+[16] - Nikulin, Kurenkov et al. (2022). Q-Ensemble for Offline RL: Don't Scale the Ensemble, Scale the Batch Size. Available at: https://arxiv.org/abs/2211.11092
