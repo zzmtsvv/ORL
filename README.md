@@ -51,7 +51,7 @@ Logs are available via the [link](https://wandb.ai/zzmtsvv/DecisionTransformer?w
 Logs are available via the [link](https://wandb.ai/zzmtsvv/IQL?workspace=user-zzmtsvv)
 
 ## MSG
-Logs are available via the [link](https://wandb.ai/zzmtsvv/MSG?workspace=user-zzmtsvv). This method is realised upon offline SAC algorithm. However, my realization lacks appropriate hyperparameters for best results.
+Logs are available via the [link](https://wandb.ai/zzmtsvv/MSG?workspace=user-zzmtsvv). This method is realised upon offline SAC-N algorithm. However, my realization lacks appropriate hyperparameters for best results.
 
 
 ## References
