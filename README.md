@@ -56,6 +56,8 @@ Logs are available via the [link](https://wandb.ai/zzmtsvv/IQL?workspace=user-zz
 ## MSG
 Logs are available via the [link](https://wandb.ai/zzmtsvv/MSG?workspace=user-zzmtsvv). This method is realised upon offline SAC-N algorithm. However, my realization lacks appropriate hyperparameters for best results.
 
+You can also check out my implementation of [RORL](https://github.com/zzmtsvv/rorl) whose config also suffers from inappropriate hyperparameters. [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv)
+
 
 ## References
 [1] - Yi Zhao et al. (2022). Adaptive Behavior Cloning Regularization for Stable Offline-to-Online Reinforcement Learning. Available at: https://arxiv.org/abs/2210.13846 <br />
