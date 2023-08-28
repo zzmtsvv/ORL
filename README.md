@@ -1,5 +1,5 @@
 # Offline2Online Reinforcement Learning
-This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />`July-August 2023 update`: There are also additional implementations of Cal-QL [9] in `cal_ql`, ReBRAC[11] in `rebrac`, EDAC[12] in `edac`, AWAC[13] in `awac`, Decision Transformer[14] in `decision_transformer`, IQL[15] in `iql`, MSG[17] in `msg` folders respectively. At the moment offline training is realised for this models. There is also a mention of my implementation of SAC-RND[10]. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available down below.
+This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />`July-August 2023 update`: There are also additional implementations of Cal-QL [9] in `cal_ql`, ReBRAC[11] in `rebrac`, EDAC[12] in `edac`, AWAC[13] in `awac`, Decision Transformer[14] in `decision_transformer`, IQL[15] in `iql`, MSG[17] in `msg` folders respectively. At the moment offline training is realised for this models. There are also mentions of my implementations of SAC-RND[10] and CNF[18]. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available down below.
 
 ## General setup
 I've chosen these datasets from gym as they are from MuJoCo, i.e. require learning of complex underlying structufe of the given task with trade-off in short-term and long-term strategies and Google Colab doesn't die from them ;). I have also used `d4rl` [3] library at https://github.com/tinkoff-ai/d4rl as a module to get offline dataset. Datasets used from `d4rl` for environments mentioned above: `medium` and `medium-replay`. Both models have the same base structure in architecture and training - actor-critic model [6] combined with Double Q-learning ([7], [8]).
@@ -29,6 +29,9 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 # Offline Reinforcement Learning
 ## SAC-RND[10]
 Check out for [my implementation](https://github.com/zzmtsvv/sac_rnd). Logs are available via the [link](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv)
+
+## CNF
+Check out for [my implementation](https://github.com/zzmtsvv/cnf). Logs are available via the [link](https://wandb.ai/zzmtsvv/CNF/workspace?workspace=user-zzmtsvv)
 
 ## Cal-QL
 Although it is offline2online method, only offline training is realised yet in `cal_ql` folder. Logs are available via the [link](https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv)
@@ -71,4 +74,5 @@ Logs are available via the [link](https://wandb.ai/zzmtsvv/MSG?workspace=user-zz
 [14] - Chen, Lu et al. (2021). Decision Transformer: Reinforcement Learning via Sequence Modeling. Available at: https://arxiv.org/abs/2106.01345 <br/>
 [15] - Kostrikov, Nair et al. (2021). Offline Reinforcement Learning with Implicit Q-Learning. Available at: https://arxiv.org/abs/2110.06169 <br/>
 [16] - Nikulin, Kurenkov et al. (2022). Q-Ensemble for Offline RL: Don't Scale the Ensemble, Scale the Batch Size. Available at: https://arxiv.org/abs/2211.11092 <br/>
-[17] - Kamyar, Ghasemipour et al. (2022). Why So Pessimistic? Estimating Uncertainties for Offline RL through Ensembles, and Why Their Independence Matters. Available at: https://arxiv.org/abs/2205.13703
+[17] - Kamyar, Ghasemipour et al. (2022). Why So Pessimistic? Estimating Uncertainties for Offline RL through Ensembles, and Why Their Independence Matters. Available at: https://arxiv.org/abs/2205.13703 <br/>
+[18] Akimov, Kurenkov et al. (2023). Let Offline RL Flow: Training Conservative Agents in the Latent Space of Normalizing Flows. Available at: https://arxiv.org/abs/2211.11096
