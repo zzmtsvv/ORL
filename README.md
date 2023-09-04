@@ -1,5 +1,5 @@
 # Offline2Online Reinforcement Learning
-This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />`July-August 2023 update`: There are also additional implementations of Cal-QL [9] in `cal_ql`, ReBRAC[11] in `rebrac`, EDAC[12] in `edac`, AWAC[13] in `awac`, Decision Transformer[14] in `decision_transformer`, IQL[15] in `iql`, MSG[17] in `msg` folders respectively. At the moment offline training is realised for this models. There are also mentions of my implementations of SAC-RND[10] and CNF[18]. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available down below.
+This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />`July-August 2023 update`: There are also additional implementations of Cal-QL [9] in `cal_ql`, ReBRAC[11] in `rebrac`, EDAC[12] in `edac`, AWAC[13] in `awac`, Decision Transformer[14] in `decision_transformer`, IQL[15] in `iql`, MSG[17] in `msg`, PRDC[] in `prdc` folders respectively. At the moment offline training is realised for this models. There are also mentions of my implementations of SAC-RND[10] and CNF[18]. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available down below.
 
 ## General setup
 I've chosen these datasets from gym as they are from MuJoCo, i.e. require learning of complex underlying structufe of the given task with trade-off in short-term and long-term strategies and Google Colab doesn't die from them ;). I have also used `d4rl` [3] library at https://github.com/tinkoff-ai/d4rl as a module to get offline dataset. Datasets used from `d4rl` for environments mentioned above: `medium` and `medium-replay`. Both models have the same base structure in architecture and training - actor-critic model [6] combined with Double Q-learning ([7], [8]).
@@ -58,6 +58,9 @@ Logs are available via the [link](https://wandb.ai/zzmtsvv/MSG?workspace=user-zz
 
 You can also check out my implementation of [RORL](https://github.com/zzmtsvv/rorl) whose config also suffers from inappropriate hyperparameters. [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv)
 
+## PRDC
+Logs are available via the [link](https://wandb.ai/zzmtsvv/PRDC?workspace=user-zzmtsvv)
+
 
 ## References
 [1] - Yi Zhao et al. (2022). Adaptive Behavior Cloning Regularization for Stable Offline-to-Online Reinforcement Learning. Available at: https://arxiv.org/abs/2210.13846 <br />
@@ -77,4 +80,5 @@ You can also check out my implementation of [RORL](https://github.com/zzmtsvv/ro
 [15] - Kostrikov, Nair et al. (2021). Offline Reinforcement Learning with Implicit Q-Learning. Available at: https://arxiv.org/abs/2110.06169 <br/>
 [16] - Nikulin, Kurenkov et al. (2022). Q-Ensemble for Offline RL: Don't Scale the Ensemble, Scale the Batch Size. Available at: https://arxiv.org/abs/2211.11092 <br/>
 [17] - Kamyar, Ghasemipour et al. (2022). Why So Pessimistic? Estimating Uncertainties for Offline RL through Ensembles, and Why Their Independence Matters. Available at: https://arxiv.org/abs/2205.13703 <br/>
-[18] Akimov, Kurenkov et al. (2023). Let Offline RL Flow: Training Conservative Agents in the Latent Space of Normalizing Flows. Available at: https://arxiv.org/abs/2211.11096
+[18] Akimov, Kurenkov et al. (2023). Let Offline RL Flow: Training Conservative Agents in the Latent Space of Normalizing Flows. Available at: https://arxiv.org/abs/2211.11096 <br/>
+[19] Ran, Li et al. (2023). Policy Regularization with Dataset Constraint for Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2306.06569
