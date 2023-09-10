@@ -13,7 +13,7 @@
 - DOGE[20] in `doge`: [Logs](https://wandb.ai/zzmtsvv/DOGE?workspace=user-zzmtsvv)
 - BEAR[21] in `bear`: [Logs](https://wandb.ai/zzmtsvv/BEAR?workspace=user-zzmtsvv)
 - SAC-RND[10]: [Logs](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/sac_rnd)
-- RORL: [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/rorl)
+- RORL: [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/rorl) (lacks appropriate hyperparameters)
 - CNF[18]: [Logs](https://wandb.ai/zzmtsvv/CNF/workspace?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/cnf)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
