@@ -18,12 +18,12 @@
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
-## General setup
+## General setup (April 2023)
 I've chosen these datasets from gym as they are from MuJoCo, i.e. require learning of complex underlying structufe of the given task with trade-off in short-term and long-term strategies and Google Colab doesn't die from them ;). I have also used `d4rl` [3] library at https://github.com/tinkoff-ai/d4rl as a module to get offline dataset. Datasets used from `d4rl` for environments mentioned above: `medium` and `medium-replay`. Both models have the same base structure in architecture and training - actor-critic model [6] combined with Double Q-learning ([7], [8]).
 
 Models (both redq_bc and spot) were trained on this offline dataset first using `Adam` optimizer with `lr = 3e-4`. The same with online training. Scripts can be found in appropriate folders (`adaptive_bc` and `spot`)
 
-## Models
+## Models (April 2023)
 
 All available models can be tested in colab opening `inference.ipynb`. Examples of evaluation can be found in `video` folder.
 
@@ -40,7 +40,7 @@ spot is also implemented to mitigate the problem of the distribution shift by ad
 https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-9409-800739337310.mp4
 
 
-## Results
+## Results (April 2023)
 As can be seen from plots and concrete examples on videos, `spot` performs much better than `redq_bc`. Intuitively, it can be connected with the fact both works brings additional regularization term during training, in fact, density-constraint support defined in spot can handle offline distribution support more succesfully than L2 term in redq_bc due to its bigger complexity. Furthermore, additional research on latent space of VAE can potentially bring impact in offline2online field.
 
 
