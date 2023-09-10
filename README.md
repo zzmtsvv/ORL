@@ -1,5 +1,19 @@
 # Offline & Offline2Online Reinforcement Learning
-This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />`July-August 2023 update`: There are also additional implementations of Cal-QL [9] in `cal_ql`, ReBRAC[11] in `rebrac`, EDAC[12] in `edac`, AWAC[13] in `awac`, Decision Transformer[14] in `decision_transformer`, IQL[15] in `iql`, MSG[17] in `msg`, PRDC[19] in `prdc`, DOGE[20] in `doge`, BEAR[21] in `bear` folders respectively. At the moment offline training is realised for this models. There are also mentions of my implementations of SAC-RND[10], RORL and CNF[18]. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available down below.
+This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />
+`July-August 2023 update`: There are also additional implementations of:
+
+- Cal-QL [9] in `cal_ql`
+- ReBRAC[11] in `rebrac`
+- EDAC[12] in `edac`
+- AWAC[13] in `awac`
+- Decision Transformer[14] in `decision_transformer`
+- IQL[15] in `iql`
+- MSG[17] in `msg`
+- PRDC[19] in `prdc`
+- DOGE[20] in `doge`
+- BEAR[21] in `bear` folders respectively
+
+At the moment offline training is realised for this models. There are also mentions of my implementations of SAC-RND[10], RORL and CNF[18]. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available down below.
 
 ## General setup
 I've chosen these datasets from gym as they are from MuJoCo, i.e. require learning of complex underlying structufe of the given task with trade-off in short-term and long-term strategies and Google Colab doesn't die from them ;). I have also used `d4rl` [3] library at https://github.com/tinkoff-ai/d4rl as a module to get offline dataset. Datasets used from `d4rl` for environments mentioned above: `medium` and `medium-replay`. Both models have the same base structure in architecture and training - actor-critic model [6] combined with Double Q-learning ([7], [8]).
