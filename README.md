@@ -1,19 +1,22 @@
 # Offline & Offline2Online Reinforcement Learning
-This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />
-`July-August 2023 update`: There are also additional implementations of:
+`April 2023`: This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />
+`July-September 2023 update`: There are also additional implementations of:
 
-- Cal-QL [9] in `cal_ql`
-- ReBRAC[11] in `rebrac`
-- EDAC[12] in `edac`
-- AWAC[13] in `awac`
-- Decision Transformer[14] in `decision_transformer`
-- IQL[15] in `iql`
-- MSG[17] in `msg`
-- PRDC[19] in `prdc`
-- DOGE[20] in `doge`
-- BEAR[21] in `bear` folders respectively
+- Cal-QL [9] in `cal_ql`: [Logs](https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv)
+- ReBRAC[11] in `rebrac`: [Logs](https://wandb.ai/zzmtsvv/ReBRAC?workspace=user-zzmtsvv)
+- EDAC[12] in `edac`: Logs: [ SAC-N[12] ](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv) (with `eta = 0`), [LB-SAC[16]]()
+- AWAC[13] in `awac`: [Logs]()
+- Decision Transformer[14] in `decision_transformer`: [Logs]()
+- IQL[15] in `iql`: [Logs]()
+- MSG[17] in `msg`: [Logs]()
+- PRDC[19] in `prdc`: [Logs]()
+- DOGE[20] in `doge`: [Logs]()
+- BEAR[21] in `bear`: [Logs]()
+- SAC-RND[10]: [Logs](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv) [Implementation](https://github.com/zzmtsvv/sac_rnd)
+- RORL: [Logs]() [Implementation]()
+- CNF[18]: [Logs]() [Implementation]()
 
-At the moment offline training is realised for this models. There are also mentions of my implementations of SAC-RND[10], RORL and CNF[18]. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available down below.
+At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
 ## General setup
 I've chosen these datasets from gym as they are from MuJoCo, i.e. require learning of complex underlying structufe of the given task with trade-off in short-term and long-term strategies and Google Colab doesn't die from them ;). I have also used `d4rl` [3] library at https://github.com/tinkoff-ai/d4rl as a module to get offline dataset. Datasets used from `d4rl` for environments mentioned above: `medium` and `medium-replay`. Both models have the same base structure in architecture and training - actor-critic model [6] combined with Double Q-learning ([7], [8]).
@@ -39,16 +42,6 @@ https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-
 
 ## Results
 As can be seen from plots and concrete examples on videos, `spot` performs much better than `redq_bc`. Intuitively, it can be connected with the fact both works brings additional regularization term during training, in fact, density-constraint support defined in spot can handle offline distribution support more succesfully than L2 term in redq_bc due to its bigger complexity. Furthermore, additional research on latent space of VAE can potentially bring impact in offline2online field.
-
-# Offline Reinforcement Learning
-## SAC-RND[10]
-Check out for [my implementation](https://github.com/zzmtsvv/sac_rnd). Logs are available via the [link](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv)
-
-## Cal-QL
-Although it is offline2online method, only offline training is realised yet in `cal_ql` folder. Logs are available via the [link](https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv)
-
-## ReBRAC
-Logs are available via the [link](https://wandb.ai/zzmtsvv/ReBRAC?workspace=user-zzmtsvv)
 
 ## EDAC
 - SAC-N[12]: with `eta = 0`. [Logs](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv)
