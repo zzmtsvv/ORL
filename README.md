@@ -4,17 +4,17 @@
 
 - Cal-QL [9] in `cal_ql`: [Logs](https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv)
 - ReBRAC[11] in `rebrac`: [Logs](https://wandb.ai/zzmtsvv/ReBRAC?workspace=user-zzmtsvv)
-- EDAC[12] in `edac`: Logs: [ SAC-N[12] ](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv) (with `eta = 0`), [LB-SAC[16]]()
-- AWAC[13] in `awac`: [Logs]()
-- Decision Transformer[14] in `decision_transformer`: [Logs]()
-- IQL[15] in `iql`: [Logs]()
-- MSG[17] in `msg`: [Logs]()
-- PRDC[19] in `prdc`: [Logs]()
-- DOGE[20] in `doge`: [Logs]()
-- BEAR[21] in `bear`: [Logs]()
-- SAC-RND[10]: [Logs](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv) [Implementation](https://github.com/zzmtsvv/sac_rnd)
-- RORL: [Logs]() [Implementation]()
-- CNF[18]: [Logs]() [Implementation]()
+- EDAC[12] in `edac`: Logs: [EDAC itself](https://wandb.ai/zzmtsvv/EDAC?workspace=user-zzmtsvv), [SAC-N[12]](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv) (with `eta = 0`), [LB-SAC[16]](https://wandb.ai/zzmtsvv/LB-SAC?workspace=user-zzmtsvv) (with `eta = 0` and `batch_size = 10_000`)
+- AWAC[13] in `awac`: [Logs](https://wandb.ai/zzmtsvv/AWAC?workspace=user-zzmtsvv)
+- Decision Transformer[14] in `decision_transformer`: [Logs](https://wandb.ai/zzmtsvv/DecisionTransformer?workspace=user-zzmtsvv)
+- IQL[15] in `iql`: [Logs](https://wandb.ai/zzmtsvv/IQL?workspace=user-zzmtsvv)
+- MSG[17] in `msg`: [Logs](https://wandb.ai/zzmtsvv/MSG?workspace=user-zzmtsvv) (This method is realised upon offline SAC-N algorithm. However, my realization lacks appropriate hyperparameters for best results.)
+- PRDC[19] in `prdc`: [Logs](https://wandb.ai/zzmtsvv/PRDC?workspace=user-zzmtsvv)
+- DOGE[20] in `doge`: [Logs](https://wandb.ai/zzmtsvv/DOGE?workspace=user-zzmtsvv)
+- BEAR[21] in `bear`: [Logs](https://wandb.ai/zzmtsvv/BEAR?workspace=user-zzmtsvv)
+- SAC-RND[10]: [Logs](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/sac_rnd)
+- RORL: [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/rorl)
+- CNF[18]: [Logs](https://wandb.ai/zzmtsvv/CNF/workspace?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/cnf)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -42,37 +42,6 @@ https://user-images.githubusercontent.com/85760987/230911045-41823337-cc23-4c2f-
 
 ## Results
 As can be seen from plots and concrete examples on videos, `spot` performs much better than `redq_bc`. Intuitively, it can be connected with the fact both works brings additional regularization term during training, in fact, density-constraint support defined in spot can handle offline distribution support more succesfully than L2 term in redq_bc due to its bigger complexity. Furthermore, additional research on latent space of VAE can potentially bring impact in offline2online field.
-
-## EDAC
-- SAC-N[12]: with `eta = 0`. [Logs](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv)
-- LB-SAC[16]: with `eta = 0` and `batch_size = 10_000`. [Logs](https://wandb.ai/zzmtsvv/LB-SAC?workspace=user-zzmtsvv)
-- EDAC itself: [Logs](https://wandb.ai/zzmtsvv/EDAC?workspace=user-zzmtsvv)
-
-## AWAC
-Logs are available via the [link](https://wandb.ai/zzmtsvv/AWAC?workspace=user-zzmtsvv)
-
-## CNF[18]
-Check out for [my implementation](https://github.com/zzmtsvv/cnf). Logs are available via the [link](https://wandb.ai/zzmtsvv/CNF/workspace?workspace=user-zzmtsvv)
-
-## Decision Transformer
-Logs are available via the [link](https://wandb.ai/zzmtsvv/DecisionTransformer?workspace=user-zzmtsvv)
-
-## IQL
-Logs are available via the [link](https://wandb.ai/zzmtsvv/IQL?workspace=user-zzmtsvv)
-
-## MSG
-Logs are available via the [link](https://wandb.ai/zzmtsvv/MSG?workspace=user-zzmtsvv). This method is realised upon offline SAC-N algorithm. However, my realization lacks appropriate hyperparameters for best results.
-
-You can also check out my implementation of [RORL](https://github.com/zzmtsvv/rorl) whose config also suffers from inappropriate hyperparameters. [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv)
-
-## PRDC
-Logs are available via the [link](https://wandb.ai/zzmtsvv/PRDC?workspace=user-zzmtsvv)
-
-## DOGE
-Logs are available via the [link](https://wandb.ai/zzmtsvv/DOGE?workspace=user-zzmtsvv)
-
-## BEAR
-Logs are available via the [link](https://wandb.ai/zzmtsvv/BEAR?workspace=user-zzmtsvv)
 
 
 ## References
