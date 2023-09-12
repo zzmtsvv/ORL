@@ -15,6 +15,7 @@
 - SAC-RND[10]: [Logs](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/sac_rnd)
 - RORL: [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/rorl) (lacks appropriate hyperparameters)
 - CNF[18]: [Logs](https://wandb.ai/zzmtsvv/CNF/workspace?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/cnf)
+- offline O3F[22]: [Logs](https://wandb.ai/zzmtsvv/offline_O3F?workspace=user-zzmtsvv) (realised for offline learning, not as stated in the paper)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -65,4 +66,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [18] Akimov, Kurenkov et al. (2023). Let Offline RL Flow: Training Conservative Agents in the Latent Space of Normalizing Flows. Available at: https://arxiv.org/abs/2211.11096 <br/>
 [19] Ran, Li et al. (2023). Policy Regularization with Dataset Constraint for Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2306.06569 <br/>
 [20] Li, Zhan et al. (2023). When Data Geometry Meets Deep Function: Generalizing Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2205.11027 <br/>
-[21] Kumar, Fu et al. (2019). Stabilizing Off-Policy Q-Learning via Bootstrapping Error Reduction. Available at: https://proceedings.neurips.cc/paper_files/paper/2019/file/c2073ffa77b5357a498057413bb09d3a-Paper.pdf
+[21] Kumar, Fu et al. (2019). Stabilizing Off-Policy Q-Learning via Bootstrapping Error Reduction. Available at: https://proceedings.neurips.cc/paper_files/paper/2019/file/c2073ffa77b5357a498057413bb09d3a-Paper.pdf <br/>
+[22] Mark, Ghardizadeh et al. (2023). Fine-Tuning Offline Policies With Optimistic Action Selection. Available at: https://openreview.net/forum?id=2x8EKbGU51k
