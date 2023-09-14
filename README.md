@@ -16,6 +16,7 @@
 - RORL: [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/rorl) (lacks appropriate hyperparameters)
 - CNF[18]: [Logs](https://wandb.ai/zzmtsvv/CNF/workspace?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/cnf)
 - offline O3F[22]: [Logs](https://wandb.ai/zzmtsvv/offline_O3F?workspace=user-zzmtsvv) (realised for offline learning, not as stated in the paper)
+- XQL[23]: [Logs](https://wandb.ai/zzmtsvv/XQL?workspace=user-zzmtsvv)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -46,17 +47,17 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 
 
 ## References
-[1] - Yi Zhao et al. (2022). Adaptive Behavior Cloning Regularization for Stable Offline-to-Online Reinforcement Learning. Available at: https://arxiv.org/abs/2210.13846 <br />
-[2] - Jialong Wu et al. (2022). Supported Policy Optimization for Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2202.06239 <br />
-[3] - Justin Fu et al. (2021). D4RL: Datasets for Deep Data-driven Reinforcement Learning. Available at: https://arxiv.org/abs/2004.07219 <br />
-[4] - Kingma, Welling et al. (2014). Auto-Encoding Variational Bayes. Available at: https://arxiv.org/abs/1312.6114 <br />
-[5] - Sohn, Lee, Yan et al. (2015). Learning Structured Output Representation using Deep Conditional Generative Models. Available at: https://papers.nips.cc/paper_files/paper/2015/hash/8d55a249e6baa5c06772297520da2051-Abstract.html <br />
-[6] - Lillicrap, Hunt et al. (2015). Continuous Control With Deep Reinforcement Learning. Available at: https://arxiv.org/abs/1509.02971 <br />
-[7] - Mnih et al. (2013). Playing Atari with Deep Reinforcement Learning. Available at: https://arxiv.org/abs/1312.5602 <br />
-[8] - Fujimoto et al. (2018). Addressing Function Approximation Error in Actor-Critic Methods. Available at: https://arxiv.org/abs/1802.09477 <br />
-[9] - Nakamoto, Zhai et al. (2023). Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning. Available at: https://arxiv.org/abs/2303.05479 <br />
-[10] - Nikulin, Kurenkov et al. (2023). Anti-Exploration by Random Network Distillation. Available at: https://arxiv.org/abs/2301.13616 <br/>
-[11] - Tarasov, Kurenkov et al. (2023). Revisiting the Minimalist Approach to Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2305.09836 <br/>
+[1] - Yi Zhao et al. (2022). [Adaptive Behavior Cloning Regularization for Stable Offline-to-Online Reinforcement Learning](https://arxiv.org/abs/2210.13846). <br/>
+[2] - Jialong Wu et al. (2022). [Supported Policy Optimization for Offline Reinforcement Learning](https://arxiv.org/abs/2202.06239). <br />
+[3] - Justin Fu et al. (2021). [D4RL: Datasets for Deep Data-driven Reinforcement Learning](https://arxiv.org/abs/2004.07219). <br />
+[4] - Kingma, Welling et al. (2014). [Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114). <br />
+[5] - Sohn, Lee, Yan et al. (2015). [Learning Structured Output Representation using Deep Conditional Generative Models](https://papers.nips.cc/paper_files/paper/2015/hash/8d55a249e6baa5c06772297520da2051-Abstract.html). <br />
+[6] - Lillicrap, Hunt et al. (2015). [Continuous Control With Deep Reinforcement Learning](https://arxiv.org/abs/1509.02971). <br />
+[7] - Mnih et al. (2013). [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/abs/1312.5602). <br />
+[8] - Fujimoto et al. (2018). [Addressing Function Approximation Error in Actor-Critic Methods](https://arxiv.org/abs/1802.09477). <br />
+[9] - Nakamoto, Zhai et al. (2023). [Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning](https://arxiv.org/abs/2303.05479). <br />
+[10] - Nikulin, Kurenkov et al. (2023). [Anti-Exploration by Random Network Distillation](https://arxiv.org/abs/2301.13616). <br/>
+[11] - Tarasov, Kurenkov et al. (2023). [Revisiting the Minimalist Approach to Offline Reinforcement Learning](https://arxiv.org/abs/2305.09836). <br/>
 [12] - An, Moon et al. (2021). Uncertainty-Based Offline Reinforcement Learning with Diversified Q-Ensemble. Available at: https://arxiv.org/abs/2110.01548 <br/>
 [13] - Nair, Gupta et al. (2021). AWAC: Accelerating Online Reinforcement Learning with Offline Datasets. Available at: https://arxiv.org/abs/2006.09359 <br/>
 [14] - Chen, Lu et al. (2021). Decision Transformer: Reinforcement Learning via Sequence Modeling. Available at: https://arxiv.org/abs/2106.01345 <br/>
@@ -67,4 +68,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [19] Ran, Li et al. (2023). Policy Regularization with Dataset Constraint for Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2306.06569 <br/>
 [20] Li, Zhan et al. (2023). When Data Geometry Meets Deep Function: Generalizing Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2205.11027 <br/>
 [21] Kumar, Fu et al. (2019). Stabilizing Off-Policy Q-Learning via Bootstrapping Error Reduction. Available at: https://proceedings.neurips.cc/paper_files/paper/2019/file/c2073ffa77b5357a498057413bb09d3a-Paper.pdf <br/>
-[22] Mark, Ghardizadeh et al. (2023). Fine-Tuning Offline Policies With Optimistic Action Selection. Available at: https://openreview.net/forum?id=2x8EKbGU51k
+[22] Mark, Ghardizadeh et al. (2023). Fine-Tuning Offline Policies With Optimistic Action Selection. Available at: https://openreview.net/forum?id=2x8EKbGU51k <br/>
+[23] Garg, Hejna et al. (2023). [Extreme Q-Learning: MaxEnt RL without Entropy](https://arxiv.org/abs/2301.02328)
