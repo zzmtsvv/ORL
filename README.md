@@ -58,15 +58,15 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [9] - Nakamoto, Zhai et al. (2023). [Cal-QL: Calibrated Offline RL Pre-Training for Efficient Online Fine-Tuning](https://arxiv.org/abs/2303.05479). <br />
 [10] - Nikulin, Kurenkov et al. (2023). [Anti-Exploration by Random Network Distillation](https://arxiv.org/abs/2301.13616). <br/>
 [11] - Tarasov, Kurenkov et al. (2023). [Revisiting the Minimalist Approach to Offline Reinforcement Learning](https://arxiv.org/abs/2305.09836). <br/>
-[12] - An, Moon et al. (2021). Uncertainty-Based Offline Reinforcement Learning with Diversified Q-Ensemble. Available at: https://arxiv.org/abs/2110.01548 <br/>
-[13] - Nair, Gupta et al. (2021). AWAC: Accelerating Online Reinforcement Learning with Offline Datasets. Available at: https://arxiv.org/abs/2006.09359 <br/>
-[14] - Chen, Lu et al. (2021). Decision Transformer: Reinforcement Learning via Sequence Modeling. Available at: https://arxiv.org/abs/2106.01345 <br/>
-[15] - Kostrikov, Nair et al. (2021). Offline Reinforcement Learning with Implicit Q-Learning. Available at: https://arxiv.org/abs/2110.06169 <br/>
-[16] - Nikulin, Kurenkov et al. (2022). Q-Ensemble for Offline RL: Don't Scale the Ensemble, Scale the Batch Size. Available at: https://arxiv.org/abs/2211.11092 <br/>
-[17] - Kamyar, Ghasemipour et al. (2022). Why So Pessimistic? Estimating Uncertainties for Offline RL through Ensembles, and Why Their Independence Matters. Available at: https://arxiv.org/abs/2205.13703 <br/>
-[18] Akimov, Kurenkov et al. (2023). Let Offline RL Flow: Training Conservative Agents in the Latent Space of Normalizing Flows. Available at: https://arxiv.org/abs/2211.11096 <br/>
-[19] Ran, Li et al. (2023). Policy Regularization with Dataset Constraint for Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2306.06569 <br/>
-[20] Li, Zhan et al. (2023). When Data Geometry Meets Deep Function: Generalizing Offline Reinforcement Learning. Available at: https://arxiv.org/abs/2205.11027 <br/>
-[21] Kumar, Fu et al. (2019). Stabilizing Off-Policy Q-Learning via Bootstrapping Error Reduction. Available at: https://proceedings.neurips.cc/paper_files/paper/2019/file/c2073ffa77b5357a498057413bb09d3a-Paper.pdf <br/>
-[22] Mark, Ghardizadeh et al. (2023). Fine-Tuning Offline Policies With Optimistic Action Selection. Available at: https://openreview.net/forum?id=2x8EKbGU51k <br/>
+[12] - An, Moon et al. (2021). [Uncertainty-Based Offline Reinforcement Learning with Diversified Q-Ensemble](https://arxiv.org/abs/2110.01548).<br/>
+[13] - Nair, Gupta et al. (2021). [AWAC: Accelerating Online Reinforcement Learning with Offline Datasets](https://arxiv.org/abs/2006.09359).<br/>
+[14] - Chen, Lu et al. (2021). [Decision Transformer: Reinforcement Learning via Sequence Modeling](https://arxiv.org/abs/2106.01345).<br/>
+[15] - Kostrikov, Nair et al. (2021). [Offline Reinforcement Learning with Implicit Q-Learning](https://arxiv.org/abs/2110.06169).<br/>
+[16] - Nikulin, Kurenkov et al. (2022). [Q-Ensemble for Offline RL: Don't Scale the Ensemble, Scale the Batch Size](https://arxiv.org/abs/2211.11092).<br/>
+[17] - Kamyar, Ghasemipour et al. (2022). [Why So Pessimistic? Estimating Uncertainties for Offline RL through Ensembles, and Why Their Independence Matters](https://arxiv.org/abs/2205.13703). <br/>
+[18] Akimov, Kurenkov et al. (2023). [Let Offline RL Flow: Training Conservative Agents in the Latent Space of Normalizing Flows](https://arxiv.org/abs/2211.11096).<br/>
+[19] Ran, Li et al. (2023). [Policy Regularization with Dataset Constraint for Offline Reinforcement Learning](https://arxiv.org/abs/2306.06569). <br/>
+[20] Li, Zhan et al. (2023). [When Data Geometry Meets Deep Function: Generalizing Offline Reinforcement Learning](https://arxiv.org/abs/2205.11027).<br/>
+[21] Kumar, Fu et al. (2019). [Stabilizing Off-Policy Q-Learning via Bootstrapping Error Reduction](https://proceedings.neurips.cc/paper_files/paper/2019/file/c2073ffa77b5357a498057413bb09d3a-Paper.pdf).<br/>
+[22] Mark, Ghardizadeh et al. (2023). [Fine-Tuning Offline Policies With Optimistic Action Selection](https://openreview.net/forum?id=2x8EKbGU51k). <br/>
 [23] Garg, Hejna et al. (2023). [Extreme Q-Learning: MaxEnt RL without Entropy](https://arxiv.org/abs/2301.02328)
