@@ -18,7 +18,7 @@
 - offline O3F[22]: [Logs](https://wandb.ai/zzmtsvv/offline_O3F?workspace=user-zzmtsvv) (realised for offline learning, not as stated in the paper)
 - XQL[23]: [Logs](https://wandb.ai/zzmtsvv/XQL?workspace=user-zzmtsvv)
 - TD7[24]: [Logs](https://wandb.ai/zzmtsvv/TD7?workspace=user-zzmtsvv)
-- offline TQC[25]: [Logs](https://wandb.ai/zzmtsvv/offline_TQC?workspace=user-zzmtsvv)
+- offline TQC[25]: [Logs](https://wandb.ai/zzmtsvv/offline_TQC?workspace=user-zzmtsvv) (failed on `walker2d-medium-v2`)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
