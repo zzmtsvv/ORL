@@ -18,6 +18,7 @@
 - offline O3F[22]: [Logs](https://wandb.ai/zzmtsvv/offline_O3F?workspace=user-zzmtsvv) (realised for offline learning, not as stated in the paper)
 - XQL[23]: [Logs](https://wandb.ai/zzmtsvv/XQL?workspace=user-zzmtsvv)
 - TD7[24]: [Logs](https://wandb.ai/zzmtsvv/TD7?workspace=user-zzmtsvv)
+- offline TQC[25]: [Logs](https://wandb.ai/zzmtsvv/offline_TQC?workspace=user-zzmtsvv)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -71,4 +72,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [21] Kumar, Fu et al. (2019). [Stabilizing Off-Policy Q-Learning via Bootstrapping Error Reduction](https://proceedings.neurips.cc/paper_files/paper/2019/file/c2073ffa77b5357a498057413bb09d3a-Paper.pdf).<br/>
 [22] Mark, Ghardizadeh et al. (2023). [Fine-Tuning Offline Policies With Optimistic Action Selection](https://openreview.net/forum?id=2x8EKbGU51k). <br/>
 [23] Garg, Hejna et al. (2023). [Extreme Q-Learning: MaxEnt RL without Entropy](https://arxiv.org/abs/2301.02328) <br/>
-[24] Fujimoto, Chang et al. (2023). [For SALE: State-Action Representation Learning for Deep Reinforcement Learning](https://arxiv.org/abs/2306.02451)
+[24] Fujimoto, Chang et al. (2023). [For SALE: State-Action Representation Learning for Deep Reinforcement Learning](https://arxiv.org/abs/2306.02451) <br/>
+[25] Kuznetsov, Shvechikov et al. (2020). [Controlling Overestimation Bias with Truncated Mixture of Continuous Distributional Quantile Critics](https://arxiv.org/abs/2005.04269)
