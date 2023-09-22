@@ -20,6 +20,7 @@
 - TD7[24]: [Logs](https://wandb.ai/zzmtsvv/TD7?workspace=user-zzmtsvv)
 - offline TQC[25]: [Logs](https://wandb.ai/zzmtsvv/offline_TQC?workspace=user-zzmtsvv) (failed on `walker2d-medium-v2`)
 - InAC[26]: [Logs](https://wandb.ai/zzmtsvv/InAC?workspace=user-zzmtsvv)
+- FisherBRC[27]: [Logs](https://wandb.ai/zzmtsvv/FisherBRC?workspace=user-zzmtsvv)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -75,4 +76,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [23] Garg, Hejna et al. (2023). [Extreme Q-Learning: MaxEnt RL without Entropy](https://arxiv.org/abs/2301.02328) <br/>
 [24] Fujimoto, Chang et al. (2023). [For SALE: State-Action Representation Learning for Deep Reinforcement Learning](https://arxiv.org/abs/2306.02451) <br/>
 [25] Kuznetsov, Shvechikov et al. (2020). [Controlling Overestimation Bias with Truncated Mixture of Continuous Distributional Quantile Critics](https://arxiv.org/abs/2005.04269) <br/>
-[26] Xiao, Wang et al. (2023). [The In-Sample Softmax for Offline Reinforcement Learning](https://arxiv.org/abs/2302.14372)
+[26] Xiao, Wang et al. (2023). [The In-Sample Softmax for Offline Reinforcement Learning](https://arxiv.org/abs/2302.14372) <br/>
+[27] Kostrikov, Tompson, et al. (2021). [Offline Reinforcement Learning with Fisher Divergence Critic Regularization](https://arxiv.org/abs/2103.08050)
