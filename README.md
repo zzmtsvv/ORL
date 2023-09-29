@@ -23,7 +23,7 @@
 - FisherBRC[27]: [Logs](https://wandb.ai/zzmtsvv/FisherBRC?workspace=user-zzmtsvv)
 - Diffusion Q-Learning[28]: [Logs](https://wandb.ai/zzmtsvv/DiffusionQL?workspace=user-zzmtsvv)
 - Sparse Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/SQL?workspace=user-zzmtsvv)
-- Exponential Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/EQL?workspace=user-zzmtsvv) (differs from SQL mentioned above by a bit different updated of value function and actor)
+- Exponential Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/EQL?workspace=user-zzmtsvv) (differs from SQL mentioned above by a bit different update of value function and actor)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
