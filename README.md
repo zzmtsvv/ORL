@@ -27,6 +27,8 @@
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
+You can also check out my [Logs](https://wandb.ai/zzmtsvv/SEEM?workspace=user-zzmtsvv) for SEEM[30] paper.
+
 ## General setup (April 2023)
 I've chosen these datasets from gym as they are from MuJoCo, i.e. require learning of complex underlying structufe of the given task with trade-off in short-term and long-term strategies and Google Colab doesn't die from them ;). I have also used `d4rl` [3] library at https://github.com/tinkoff-ai/d4rl as a module to get offline dataset. Datasets used from `d4rl` for environments mentioned above: `medium` and `medium-replay`. Both models have the same base structure in architecture and training - actor-critic model [6] combined with Double Q-learning ([7], [8]).
 
@@ -82,4 +84,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [26] Xiao, Wang et al. (2023). [The In-Sample Softmax for Offline Reinforcement Learning](https://arxiv.org/abs/2302.14372) <br/>
 [27] Kostrikov, Tompson, et al. (2021). [Offline Reinforcement Learning with Fisher Divergence Critic Regularization](https://arxiv.org/abs/2103.08050) <br/>
 [28] Wang, Hunt, Zhou (2023). [Diffusion Policies as an Expressive Policy Class for Offline Reinforcement Learning](https://arxiv.org/abs/2208.06193) <br/>
-[29] Xu, Jiang et al. (2023). [Offline RL with No OOD Actions: In-Sample Learning via Implicit Value Regularization](https://arxiv.org/abs/2303.15810v1)
+[29] Xu, Jiang et al. (2023). [Offline RL with No OOD Actions: In-Sample Learning via Implicit Value Regularization](https://arxiv.org/abs/2303.15810v1) <br/>
+[30] Yue, Lu et al. (2023). [Understanding, Predicting and Better Resolving Q-Value Divergence in Offline-RL](https://arxiv.org/abs/2310.04411)
