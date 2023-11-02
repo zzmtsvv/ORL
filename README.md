@@ -24,7 +24,7 @@
 - Diffusion Q-Learning[28]: [Logs](https://wandb.ai/zzmtsvv/DiffusionQL?workspace=user-zzmtsvv)
 - Sparse Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/SQL?workspace=user-zzmtsvv)
 - Exponential Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/EQL?workspace=user-zzmtsvv) (differs from SQL mentioned above by a bit different update of value function and actor)
-- ATAC [31]: [Logs](https://wandb.ai/zzmtsvv/ATAC?workspace=user-zzmtsvv) (bad. Gotta tune hyperparams.)
+- ATAC [31]: [Logs](https://wandb.ai/zzmtsvv/ATAC?workspace=user-zzmtsvv) (bad. Gotta tune hyperparams. (or do some pretraining that is not actually mentioned in the paper :) ))
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
