@@ -24,6 +24,7 @@
 - Diffusion Q-Learning[28]: [Logs](https://wandb.ai/zzmtsvv/DiffusionQL?workspace=user-zzmtsvv)
 - Sparse Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/SQL?workspace=user-zzmtsvv)
 - Exponential Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/EQL?workspace=user-zzmtsvv) (differs from SQL mentioned above by a bit different update of value function and actor)
+- ATAC [31]: [Logs](https://wandb.ai/zzmtsvv/ATAC?workspace=user-zzmtsvv) (bad. Gotta tune hyperparams.)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -85,4 +86,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [27] Kostrikov, Tompson, et al. (2021). [Offline Reinforcement Learning with Fisher Divergence Critic Regularization](https://arxiv.org/abs/2103.08050) <br/>
 [28] Wang, Hunt, Zhou (2023). [Diffusion Policies as an Expressive Policy Class for Offline Reinforcement Learning](https://arxiv.org/abs/2208.06193) <br/>
 [29] Xu, Jiang et al. (2023). [Offline RL with No OOD Actions: In-Sample Learning via Implicit Value Regularization](https://arxiv.org/abs/2303.15810v1) <br/>
-[30] Yue, Lu et al. (2023). [Understanding, Predicting and Better Resolving Q-Value Divergence in Offline-RL](https://arxiv.org/abs/2310.04411)
+[30] Yue, Lu et al. (2023). [Understanding, Predicting and Better Resolving Q-Value Divergence in Offline-RL](https://arxiv.org/abs/2310.04411) <br/>
+[31] Cheng, Xie et al. (2022). [Adversarially Trained Actor Critic for Offline Reinforcement Learning](https://arxiv.org/abs/2202.02446)
