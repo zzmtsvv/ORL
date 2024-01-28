@@ -13,6 +13,7 @@
 - DOGE[20]: [Logs](https://wandb.ai/zzmtsvv/DOGE?workspace=user-zzmtsvv)
 - BEAR[21]: [Logs](https://wandb.ai/zzmtsvv/BEAR?workspace=user-zzmtsvv)
 - SAC-RND[10]: [Logs](https://wandb.ai/zzmtsvv/sac_rnd?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/sac_rnd)
+- SAC-DRND[32]: [Logs](https://wandb.ai/zzmtsvv/sac_drnd?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/sac_drnd)
 - RORL: [Logs](https://wandb.ai/zzmtsvv/RORL?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/rorl) (lacks appropriate hyperparameters)
 - CNF[18]: [Logs](https://wandb.ai/zzmtsvv/CNF/workspace?workspace=user-zzmtsvv) & [Implementation](https://github.com/zzmtsvv/cnf)
 - offline O3F[22]: [Logs](https://wandb.ai/zzmtsvv/offline_O3F?workspace=user-zzmtsvv) (realised for offline learning, not as stated in the paper)
@@ -87,4 +88,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [28] Wang, Hunt, Zhou (2023). [Diffusion Policies as an Expressive Policy Class for Offline Reinforcement Learning](https://arxiv.org/abs/2208.06193) <br/>
 [29] Xu, Jiang et al. (2023). [Offline RL with No OOD Actions: In-Sample Learning via Implicit Value Regularization](https://arxiv.org/abs/2303.15810v1) <br/>
 [30] Yue, Lu et al. (2023). [Understanding, Predicting and Better Resolving Q-Value Divergence in Offline-RL](https://arxiv.org/abs/2310.04411) <br/>
-[31] Cheng, Xie et al. (2022). [Adversarially Trained Actor Critic for Offline Reinforcement Learning](https://arxiv.org/abs/2202.02446)
+[31] Cheng, Xie et al. (2022). [Adversarially Trained Actor Critic for Offline Reinforcement Learning](https://arxiv.org/abs/2202.02446) <br/>
+[32] Yang, Tao et al. (2024). [Exploration and Anti-Exploration with Distributional Random Network Distillation](https://arxiv.org/abs/2401.09750)
