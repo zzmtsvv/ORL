@@ -2,7 +2,7 @@
 `April 2023`: This repository contains experiments of different reinforcement learning algorithms applied to 3 MuJoCo environments - `Walker2d, Hopper and Halfcheetah`. Essentially, there are 2 models in comparison: Adaptive Behavior Cloning Regularization [1] (in short, `redq_bc`) and Supported Policy Optimization for Offline Reinforcement Learning [2] (in short, `spot`).<br /><br />
 `July-September 2023 update`: There are also additional implementations of:
 
-- Cal-QL [9]: [Logs](https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv)
+- Cal-QL [9]: [Logs](https://wandb.ai/zzmtsvv/cal_ql?workspace=user-zzmtsvv) (wip)
 - ReBRAC[11]: [Logs](https://wandb.ai/zzmtsvv/ReBRAC?workspace=user-zzmtsvv)
 - EDAC[12]: Logs: [EDAC itself](https://wandb.ai/zzmtsvv/EDAC?workspace=user-zzmtsvv), [SAC-N[12]](https://wandb.ai/zzmtsvv/SAC-N?workspace=user-zzmtsvv) (with `eta = 0`), [LB-SAC[16]](https://wandb.ai/zzmtsvv/LB-SAC?workspace=user-zzmtsvv) (with `eta = 0` and `batch_size = 10_000`)
 - AWAC[13]: [Logs](https://wandb.ai/zzmtsvv/AWAC?workspace=user-zzmtsvv)
@@ -26,6 +26,8 @@
 - Sparse Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/SQL?workspace=user-zzmtsvv)
 - Exponential Q-Learning[29]: [Logs](https://wandb.ai/zzmtsvv/EQL?workspace=user-zzmtsvv) (differs from SQL mentioned above by a bit different update of value function and actor)
 - ATAC [31]: [Logs](https://wandb.ai/zzmtsvv/ATAC?workspace=user-zzmtsvv) (bad. Gotta tune hyperparams.)
+- TD3 BC++ [33]: [Logs](https://wandb.ai/zzmtsvv/TD3_BC++?workspace=user-zzmtsvv)
+- STR [34]: [Logs](https://wandb.ai/zzmtsvv/Offline%20STR?workspace=user-zzmtsvv) (`nan` failed)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -89,4 +91,6 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [29] Xu, Jiang et al. (2023). [Offline RL with No OOD Actions: In-Sample Learning via Implicit Value Regularization](https://arxiv.org/abs/2303.15810v1) <br/>
 [30] Yue, Lu et al. (2023). [Understanding, Predicting and Better Resolving Q-Value Divergence in Offline-RL](https://arxiv.org/abs/2310.04411) <br/>
 [31] Cheng, Xie et al. (2022). [Adversarially Trained Actor Critic for Offline Reinforcement Learning](https://arxiv.org/abs/2202.02446) <br/>
-[32] Yang, Tao et al. (2024). [Exploration and Anti-Exploration with Distributional Random Network Distillation](https://arxiv.org/abs/2401.09750)
+[32] Yang, Tao et al. (2024). [Exploration and Anti-Exploration with Distributional Random Network Distillation](https://arxiv.org/abs/2401.09750) <br/>
+[33] Gao, Xu et al. (2022). [Robust Offline Reinforcement Learning with Gradient Penalty and Constraint Relaxation](https://arxiv.org/abs/2210.10469) <br/>
+[34] Mao, Zhang et al. (2023) [Supported Trust Region Optimization for Offline Reinforcement Learning](https://arxiv.org/abs/2311.08935) <br/>

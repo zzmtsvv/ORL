@@ -25,5 +25,7 @@ workshop.ipynb
 
 # mac
 .DS_Store
+train.ipynb
 
 json_datasets
+wandb
