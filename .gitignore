@@ -11,6 +11,7 @@ policy_weights
 spot_weights
 runs
 video
+cql/
 
 # Jupyter Notebook
 .ipynb_checkpoints
