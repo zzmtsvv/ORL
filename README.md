@@ -33,7 +33,7 @@
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
-You can also check out my [Logs](https://wandb.ai/zzmtsvv/SEEM?workspace=user-zzmtsvv) for SEEM[30] paper.
+You can also check out my [Logs](https://wandb.ai/zzmtsvv/SEEM?workspace=user-zzmtsvv) and `seem_interface` for SEEM[30] paper.
 
 ## General setup (April 2023)
 I've chosen these datasets from gym as they are from MuJoCo, i.e. require learning of complex underlying structufe of the given task with trade-off in short-term and long-term strategies and Google Colab doesn't die from them ;). I have also used `d4rl` [3] library at https://github.com/tinkoff-ai/d4rl as a module to get offline dataset. Datasets used from `d4rl` for environments mentioned above: `medium` and `medium-replay`. Both models have the same base structure in architecture and training - actor-critic model [6] combined with Double Q-learning ([7], [8]).
