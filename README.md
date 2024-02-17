@@ -30,6 +30,7 @@
 - STR [34]: [Logs](https://wandb.ai/zzmtsvv/Offline%20STR?workspace=user-zzmtsvv) (`nan` failed)
 - BPPO [35]
 - AsymQ [36]
+- MCQ [37]
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -97,4 +98,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [33] Gao, Xu et al. (2022). [Robust Offline Reinforcement Learning with Gradient Penalty and Constraint Relaxation](https://arxiv.org/abs/2210.10469) <br/>
 [34] Mao, Zhang et al. (2023) [Supported Trust Region Optimization for Offline Reinforcement Learning](https://arxiv.org/abs/2311.08935) <br/>
 [35] Zhuang, Lei et al. (2023). [Behavior Proximal Policy Optimization](https://arxiv.org/abs/2302.11312) <br/>
-[36] Zhang, Krishna et al. (2023). [AsymQ: Assymetric Q-Loss to Mitigate Over-Estimation Bias in Off-Policy Reinforcement Learning](https://openreview.net/pdf?id=KoRdlJjgiQ)
+[36] Zhang, Krishna et al. (2023). [AsymQ: Assymetric Q-Loss to Mitigate Over-Estimation Bias in Off-Policy Reinforcement Learning](https://openreview.net/pdf?id=KoRdlJjgiQ) <br/>
+[37] Lyu, Ma et al. (2022). [Mildly Conservative Q-Learning for Offline Reinforcement Learning](https://arxiv.org/abs/2206.04745) <br/>

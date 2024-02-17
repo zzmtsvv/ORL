@@ -6,6 +6,10 @@ import numpy as np
 from torch.distributions import Normal
 
 
+def extend_n_repeat(object: torch.Tensor, dim: int, num_repeats: int) -> torch.Tensor:
+    return object.unsqueeze(dim).repeat_interleave(num_repeats, dim=dim)
+
+
 class Actor(nn.Module):
     def __init__(self,
                  state_dim: int,
@@ -134,13 +138,14 @@ class EnsembledCritic(nn.Module):
         nn.init.uniform_(self.critic[-1].weight, -3e-3, 3e-3)
         nn.init.uniform_(self.critic[-1].bias, -3e-3, 3e-3)
     
-    def forward(self, state: torch.Tensor, action: torch.Tensor) -> torch.Tensor:
+    def forward(self, states: torch.Tensor, actions: torch.Tensor) -> torch.Tensor:
         # [batch_size, state_dim + action_dim]
-        concat = torch.cat([state, action], dim=-1)
+        concat = torch.cat([states, actions], dim=-1)
         concat = concat.unsqueeze(0).repeat_interleave(self.num_critics, dim=0)
 
         # [num_critics, batch_size]
         q_values = self.critic(concat).squeeze(-1)
+
         return q_values
 
 
@@ -210,7 +215,7 @@ class ConditionalVAE(nn.Module):
     def importance_sampling_loss(self,
                                  state: torch.Tensor,
                                  action: torch.Tensor,
-                                 beta: float,
+                                 beta: float = 1.0,
                                  num_samples: int = 10) -> torch.Tensor:
         mean, std = self.encode(state, action)
         
@@ -270,8 +275,21 @@ class ConditionalVAE(nn.Module):
 
 if __name__ == "__main__":
     vae = ConditionalVAE(17, 6)
+    critic = EnsembledCritic(17, 6, num_critics=2)
     state = torch.rand(4, 17)
+    next_state = torch.rand(4, 17)
     action = torch.rand(4, 6)
 
-    print(vae.decode(state).shape)
+    # print(vae.decode(state).shape)
+    state_in = torch.cat([state, next_state], dim=0)
+    action_in = vae.decode_multiple(state_in)
 
+    print(state_in.shape, action_in.shape)
+    state_in = state_in.repeat(10, 1, 1).reshape(-1, 17)
+    action_in = action_in.reshape(-1, 6)
+
+    aa = critic(state_in, action_in)#.reshape(2, 10, -1)
+    print(aa.unsqueeze(-1).shape)
+    # aa = torch.max(aa, dim=1)[0].min(0).values
+
+    # print(aa.clamp_min(0).repeat(10, 1, 1).reshape(-1, 1).shape)
