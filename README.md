@@ -31,6 +31,7 @@
 - BPPO [35]
 - AsymQ [36]
 - MCQ [37]
+- DroQ [38]
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -100,3 +101,4 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [35] Zhuang, Lei et al. (2023). [Behavior Proximal Policy Optimization](https://arxiv.org/abs/2302.11312) <br/>
 [36] Zhang, Krishna et al. (2023). [AsymQ: Assymetric Q-Loss to Mitigate Over-Estimation Bias in Off-Policy Reinforcement Learning](https://openreview.net/pdf?id=KoRdlJjgiQ) <br/>
 [37] Lyu, Ma et al. (2022). [Mildly Conservative Q-Learning for Offline Reinforcement Learning](https://arxiv.org/abs/2206.04745) <br/>
+[38] Hiraoka et al. (2022) [Dropout Q-Functions for Doubly Efficient Reinforcement Learning](https://arxiv.org/abs/2110.02034)
