@@ -2,7 +2,7 @@ import torch
 from torch import nn
 import numpy as np
 import os
-import gym
+import gymnasium as gym
 from typing import Optional, Tuple, Union, Dict
 import json
 from imageio import mimsave

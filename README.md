@@ -8,6 +8,7 @@
 - AWAC[13]: [Logs](https://wandb.ai/zzmtsvv/AWAC?workspace=user-zzmtsvv)
 - Decision Transformer[14]: [Logs](https://wandb.ai/zzmtsvv/DecisionTransformer?workspace=user-zzmtsvv)
 - IQL[15]: [Logs](https://wandb.ai/zzmtsvv/IQL?workspace=user-zzmtsvv)
+- Robust IQL [39]
 - MSG[17]: [Logs](https://wandb.ai/zzmtsvv/MSG?workspace=user-zzmtsvv) (This method is realised upon offline SAC-N algorithm. However, my realization lacks appropriate hyperparameters for best results.)
 - PRDC[19]: [Logs](https://wandb.ai/zzmtsvv/PRDC?workspace=user-zzmtsvv)
 - DOGE[20]: [Logs](https://wandb.ai/zzmtsvv/DOGE?workspace=user-zzmtsvv)
@@ -101,4 +102,5 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [35] Zhuang, Lei et al. (2023). [Behavior Proximal Policy Optimization](https://arxiv.org/abs/2302.11312) <br/>
 [36] Zhang, Krishna et al. (2023). [AsymQ: Assymetric Q-Loss to Mitigate Over-Estimation Bias in Off-Policy Reinforcement Learning](https://openreview.net/pdf?id=KoRdlJjgiQ) <br/>
 [37] Lyu, Ma et al. (2022). [Mildly Conservative Q-Learning for Offline Reinforcement Learning](https://arxiv.org/abs/2206.04745) <br/>
-[38] Hiraoka et al. (2022) [Dropout Q-Functions for Doubly Efficient Reinforcement Learning](https://arxiv.org/abs/2110.02034)
+[38] Hiraoka et al. (2022) [Dropout Q-Functions for Doubly Efficient Reinforcement Learning](https://arxiv.org/abs/2110.02034) <br/>
+[39] Yang et al. (2023) [Towards Robust Offline Reinforcement Learning under Diverse Data Corruption](https://arxiv.org/abs/2310.12955) <br/>
