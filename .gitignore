@@ -12,7 +12,7 @@ spot_weights
 runs
 video
 cql/
-sr_dice/
+# sr_dice/
 
 # Jupyter Notebook
 .ipynb_checkpoints
