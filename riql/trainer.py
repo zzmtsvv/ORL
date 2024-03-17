@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 class RIQLTrainer:
     def __init__(self,
-                 cfg=riql_config) -> None:
+                 cfg=riql_config()) -> None:
         self.cfg = cfg
         self.device = cfg.device
 
