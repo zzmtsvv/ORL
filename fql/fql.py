@@ -102,7 +102,7 @@ class FQL:
             device=self.device,
             generator=rng
         )
-        target_flow_actions = self.compute_flow_actions(states, noises)
+        target_flow_actions = self.compute_flow_actions(states, noises).detach()
         actor_actions = self.one_step_actor(states, noises)
         distillation_loss = F.mse_loss(actor_actions, target_flow_actions)
 
