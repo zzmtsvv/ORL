@@ -36,6 +36,7 @@
 - SR DICE [40]
 - ODICE [41]
 - CrossQ [42] (actually idk how to really accelerate it on `torch`)
+- FQL [43] [Logs](https://wandb.ai/zzmtsvv/FQL?workspace=user-zzmtsvv) (requires hyperparams tuning)
 
 At the moment offline training is realised for this models. Logs (of only training actually, unfortunately, without evaluation as it was forbidden on the machine to install mujoco stuff, so I trained the models with preloaded pickle and json datasets) are available up below.
 
@@ -110,3 +111,4 @@ As can be seen from plots and concrete examples on videos, `spot` performs much 
 [40] Fujimoto et al. (2023). [A Deep Reinforcement Learning Approach to Marginalized Importance Sampling with the Successor Representation](https://arxiv.org/pdf/2106.06854.pdf) <br/>
 [41] Mao, Xu et al. (2024). [ODICE: Revealing the Mystery of Distribution Correction Estimation via Orthogonal-gradient Update](https://arxiv.org/abs/2402.00348) <br/>
 [42] Bhatt, Palenicek et al. (2023). [CrosQ: Batch Normalization in Deep Reinforcement Learning for Greater Sample Efficiency and Simplicity](https://arxiv.org/abs/1902.05605) <br/>
+[43] Park, Li, Levine (2025). [Flow Q-Learning](https://arxiv.org/abs/2502.02538) <br/>
